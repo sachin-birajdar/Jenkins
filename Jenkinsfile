@@ -7,6 +7,9 @@ pipeline {
         choice(name: 'CHOICE', choices: ['One', 'Two', 'Three'], description: 'Pick something')
         password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'Enter a password')
     }
+     triggers {
+        cron('*/2 * * * 1-5')
+    }
     environment{
       ENV_URL= "pipeline.google.com"
       ACCESS_KEY = credentials('aws_access_key')
