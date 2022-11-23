@@ -18,6 +18,7 @@ pipeline {
     stages {
         stage('This is first stage') { 
           steps{
+               sh 'mvn --version'
               sh "echo one"
               sh "env"
           }
