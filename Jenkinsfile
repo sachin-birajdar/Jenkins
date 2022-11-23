@@ -8,7 +8,7 @@ pipeline {
     //     password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'Enter a password')
     // }
      triggers {
-        cron('*/2 * * * 1-5')
+        pollSCM('*/2 * * * 1-5')
     }
     environment{
       ENV_URL= "pipeline.google.com"
