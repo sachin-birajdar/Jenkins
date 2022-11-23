@@ -19,6 +19,8 @@ pipeline {
         maven 'maven-3.5.0' 
     }
     stages {
+           stage(parallel ){
+            parallel {
         stage('This is first stage') { 
           steps{
                sh 'mvn --version'
@@ -44,4 +46,6 @@ pipeline {
           }
         }
 }
+           }
+    }
 }
