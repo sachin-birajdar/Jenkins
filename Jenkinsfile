@@ -15,6 +15,9 @@ pipeline {
       ACCESS_KEY = credentials('aws_access_key')
       SSH_CRED = credentials('SSH-CRED')
     }
+    tools {
+        maven 'apache-maven-3.5.0' 
+    }
     stages {
         stage('This is first stage') { 
           steps{
