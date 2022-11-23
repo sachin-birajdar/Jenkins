@@ -19,5 +19,14 @@ pipeline {
               sh "echo ENV_URL is ${ENV_URL}"
           }
         }
+         stage('This is third stage') { 
+          environment{
+            ENV_URL="test.google.com"
+          }
+          steps{
+              
+              sh "echo ENV_URL is ${ENV_URL}"
+          }
+        }
 }
 }
