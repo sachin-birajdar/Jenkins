@@ -1,5 +1,5 @@
 pipeline {
-    agent any 
+    agent { label 'java-node' }  
     // parameters {
     //     string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
     //     text(name: 'BIOGRAPHY', defaultValue: '', description: 'Enter some information about the person')
@@ -15,14 +15,15 @@ pipeline {
       ACCESS_KEY = credentials('aws_access_key')
       SSH_CRED = credentials('SSH-CRED')
     }
-    tools {
-        maven 'maven-3.5.0' 
-    }
+    // tools {
+    //     maven 'maven-3.5.0' 
+    // }
     stages {
            stage(parallel ){
             parallel {
         stage('This is first stage') { 
           steps{
+               sh "hostname"
                sh 'mvn --version'
               sh "echo one"
               sh "env"
