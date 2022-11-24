@@ -15,9 +15,9 @@ pipeline {
       ACCESS_KEY = credentials('aws_access_key')
       SSH_CRED = credentials('SSH-CRED')
     }
-    // tools {
-    //     maven 'maven-3.5.0' 
-    // }
+    tools {
+        maven 'maven-3.5.0' 
+    }
     stages {
            stage(parallel ){
             parallel {
